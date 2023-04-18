@@ -9,8 +9,9 @@ import { StateCourseT } from "../types/stateCourseT";
 import { Row } from "./Row/Row";
 import style from './styles.module.css'
 
-
 export const Display: FC = () => {
+
+  const headers = ['Pair name/market', Path.FIRST, Path.SECOND, Path.THIRD]
 
   const [coursesFirst, setCoursesFirst] = useState<StateCourseT>(initial_course)
   const [coursesSecond, setCoursesSecond] = useState<StateCourseT>(initial_course)
@@ -33,12 +34,8 @@ export const Display: FC = () => {
 
   return (
     <div className={style.main}>
-           <div>Pair name/market</div>
-
-
-      {/*<Courses courses={coursesFirst} title={Path.FIRST}/>*/}
-      {/*<Courses courses={coursesSecond} title={Path.SECOND}/>*/}
-      {/*<Courses courses={coursesThird} title={Path.THIRD}/>*/}
+      <div className={style.header}>{headers.map((element) =>
+        <div key={element}>{element}</div>)}</div>
 
 
       <Row title={Currency.RUB + ' / ' + CUPCAKE}
