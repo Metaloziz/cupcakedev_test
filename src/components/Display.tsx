@@ -1,9 +1,12 @@
 import React, { FC, useState, useEffect } from 'react';
 import { api } from "../api/api";
+import { CUPCAKE } from "../constants/cupcake";
+import { DEFAULT_COURSE } from "../constants/default_course";
 import { initial_course } from "../constants/initial_course";
+import { Currency } from "../enums/currency";
 import { Path } from "../enums/path";
 import { StateCourseT } from "../types/stateCourseT";
-import { Courses } from "./Courses/Courses";
+import { Row } from "./Row/Row";
 import style from './styles.module.css'
 
 
@@ -17,26 +20,35 @@ export const Display: FC = () => {
     api.getData(Path.FIRST, setCoursesFirst)
     api.getData(Path.SECOND, setCoursesSecond)
     api.getData(Path.THIRD, setCoursesThird)
-
   }, [])
+
+
+  const getCurrentCourse = (currency: Currency): number[] => {
+    return [
+      coursesFirst[currency] ?? DEFAULT_COURSE,
+      coursesSecond[currency] ?? DEFAULT_COURSE,
+      coursesThird[currency] ?? DEFAULT_COURSE
+    ]
+  }
 
   return (
     <div className={style.main}>
-      <div>
-        <div>Pair name/market</div>
-        <div>RUB/CUPCAKE</div>
-        <div>USD/CUPCAKE</div>
-        <div>EUR/CUPCAKE</div>
-        <div>RUB/USD</div>
-        <div>RUB/EUR</div>
-        <div>EUR/USD</div>
-      </div>
+           <div>Pair name/market</div>
 
 
-      <Courses courses={coursesFirst} title={Path.FIRST}/>
-      <Courses courses={coursesSecond} title={Path.SECOND}/>
-      <Courses courses={coursesThird} title={Path.THIRD}/>
+      {/*<Courses courses={coursesFirst} title={Path.FIRST}/>*/}
+      {/*<Courses courses={coursesSecond} title={Path.SECOND}/>*/}
+      {/*<Courses courses={coursesThird} title={Path.THIRD}/>*/}
+
+
+      <Row title={Currency.RUB + ' / ' + CUPCAKE}
+           values={getCurrentCourse(Currency.RUB)}/>
+      <Row title={Currency.EUR + ' / ' + CUPCAKE}
+           values={getCurrentCourse(Currency.EUR)}/>
+      <Row title={Currency.USD + ' / ' + CUPCAKE}
+           values={getCurrentCourse(Currency.USD)}/>
 
     </div>
-  );
+  )
+    ;
 };
