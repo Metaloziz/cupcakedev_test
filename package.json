@@ -1,0 +1,8 @@
+{
+  "name": "cupcakedev_test",
+  "version": "1.0.0",
+  "main": "src/index.tsx",
+  "repository": "https://github.com/Metaloziz/cupcakedev_test.git",
+  "author": "Andrew Gaityukevich <AndrewGaity@yandex.by>",
+  "license": "MIT"
+}
