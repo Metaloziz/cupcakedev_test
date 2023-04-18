@@ -1,12 +1,15 @@
+import { Course } from "../enums/course";
 import { CourseT } from "../types/courseT";
-import { rounderThreeDigits } from "./rounderThreeDigits";
+import { StateCourseT } from "../types/stateCourseT";
 
-export const convertResponseData = (data: string): number[] => {
-  const result: CourseT = JSON.parse(data)
+export const convertResponseData = (data: string): StateCourseT => {
+  const {rates}: CourseT = JSON.parse(data)
 
-  let newValues: number[] = []
+  // todo так ли считают в банках RUS/USD ?
+  rates[Course.RUB + Course.USD] = rates[Course.RUB] / rates[Course.USD]
+  rates[Course.RUB + Course.EUR] = rates[Course.RUB] / rates[Course.EUR]
+  rates[Course.EUR + Course.USD] = rates[Course.EUR] / rates[Course.USD]
 
-  Object.keys(result.rates).forEach((course) => newValues.push(rounderThreeDigits(result.rates[course])))
-
-  return newValues
+  return rates
 }
+

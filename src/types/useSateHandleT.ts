@@ -1,1 +1,3 @@
-export type UseSateHandleT = (value: (((prevState: number[]) => number[]) | number[])) => void
+import { StateCourseT } from "./stateCourseT";
+
+export type UseSateHandleT = (value: (((prevState: StateCourseT) => StateCourseT) | StateCourseT)) => void

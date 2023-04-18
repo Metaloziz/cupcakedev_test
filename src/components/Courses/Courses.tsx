@@ -1,18 +1,23 @@
 import React, { FC, memo } from "react";
+import { StateCourseT } from "../../types/stateCourseT";
+import { rounderThreeDigits } from "../../utils/rounderThreeDigits";
 
 type CoursesPropsT = {
   title: string
-  courses: number[]
+  courses: StateCourseT
 }
 
 export const Courses: FC<CoursesPropsT> = memo(({courses, title}) => {
 
-  console.log(`render ${title}`)
+  const cells = Object
+    .keys(courses)
+    .map((course) => <div key={course}>{rounderThreeDigits(courses[course])}</div>)
+
   return (
     <div>
       <div>{title}</div>
       <div>
-        {courses.map((course) => <div key={course}>{course}</div>)}
+        {cells}
       </div>
     </div>
   );
