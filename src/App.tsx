@@ -1,13 +1,12 @@
 import { FC } from 'react';
 import React from "react";
-import { Hello } from "./components/Hello";
-
+import { Display } from "./components/Display";
 
 const App: FC = () => {
 
   return (
     <div>
-      <Hello/>
+      <Display/>
     </div>
   );
 };

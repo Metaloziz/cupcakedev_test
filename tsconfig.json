@@ -8,5 +8,9 @@
     "strict": true,
     "skipLibCheck": true,
     "jsx": "react"
-  }
+  },
+  "include": [
+    "src",
+    "./defs.d.ts"
+  ]
 }

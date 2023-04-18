@@ -28,7 +28,17 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         loader: "ts-loader"
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", {
+          loader: "css-loader",
+          options: {
+            importLoaders: 1,
+            modules: true
+          }
+        }],
+      },
     ],
   },
   resolve: {
