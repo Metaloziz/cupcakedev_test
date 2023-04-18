@@ -5,7 +5,7 @@ import { Loader } from "../Loader/Loader";
 
 import style from './styles.module.css'
 
-type RowPropsT = {
+export type RowPropsT = {
   title: string
   values: number[]
 }

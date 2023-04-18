@@ -4,4 +4,6 @@ import { DEFAULT_COURSE } from "./default_course";
 
 export const initial_courses: StateCourseT = {
   [Currency.RUB]: DEFAULT_COURSE,
+  [Currency.EUR]: DEFAULT_COURSE,
+  [Currency.USD]: DEFAULT_COURSE,
 }
