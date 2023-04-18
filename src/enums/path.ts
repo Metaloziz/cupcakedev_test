@@ -1,8 +1,6 @@
 export enum Path {
-  FIRST = 'first/poll',
-  SECOND = 'second/poll',
-  THIRD = 'third/poll'
+  FIRST = 'first',
+  SECOND = 'second',
+  THIRD = 'third'
 }
-
-// todo выносить ли poll в константу ?
 

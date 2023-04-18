@@ -1,4 +1,5 @@
 import { BASE_URL } from "../constants/base_url";
+import { TYPE_REQUEST } from "../constants/type_request";
 import { Path } from "../enums/path";
 import { UseSateHandleT } from "../types/useSateHandleT";
 import { convertResponseData } from "../utils/convertResponseData";
@@ -6,7 +7,7 @@ import { convertResponseData } from "../utils/convertResponseData";
 
 export const api = {
   getData: async function (path: Path, handle: UseSateHandleT) {
-    let response = await fetch(BASE_URL + path)
+    let response = await fetch(BASE_URL + path + '/' + TYPE_REQUEST)
 
     if (response.status == 502) {
 

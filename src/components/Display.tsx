@@ -1,17 +1,21 @@
 import React, { FC, useState, useEffect } from 'react';
 import { api } from "../api/api";
 import { Path } from "../enums/path";
+import { Courses } from "./Courses/Courses";
 import style from './styles.module.css'
 
 
 export const Display: FC = () => {
 
-  const [value, setValue] = useState<number[]>([1, 2, 3])
+  const [coursesFirst, setCoursesFirst] = useState<number[]>([1, 2])
+  const [coursesSecond, setCoursesSecond] = useState<number[]>([])
+  const [coursesThird, setCoursesThird] = useState<number[]>([])
 
   useEffect(() => {
-    api.getData(Path.FIRST, setValue)
-    // api.getData(Path.SECOND)
-    // api.getData(Path.THIRD)
+    // api.getData(Path.FIRST, setCoursesFirst)
+    api.getData(Path.SECOND, setCoursesSecond)
+    // api.getData(Path.THIRD, setCoursesThird)
+
   }, [])
 
   return (
@@ -21,12 +25,15 @@ export const Display: FC = () => {
         <div>RUB/CUPCAKE</div>
         <div>USD/CUPCAKE</div>
         <div>EUR/CUPCAKE</div>
+        <div>RUB/USD</div>
+        <div>RUB/EUR</div>
+        <div>EUR/USD</div>
       </div>
 
-      <div>
-        <div>FIRST</div>
-        {value.map((course) => <div key={course}>{course}</div>)}
-      </div>
+
+      <Courses courses={coursesFirst} title={Path.FIRST}/>
+      <Courses courses={coursesSecond} title={Path.SECOND}/>
+
     </div>
   );
 };
