@@ -1,3 +1,14 @@
+
+.main {
+    border: black 1px solid;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 100px;
+    margin: 1px;
+}
+
 .lowest {
-    background-color: aqua;
+    background-color: #0b8d8d;
 }

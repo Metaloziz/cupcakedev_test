@@ -1,9 +1,20 @@
+.main {
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .loader {
     display: block;
     --height-of-loader: 4px;
     --loader-color: #0071e2;
-    width: 50px;
-    height: var(--height-of-loader);
+    width: 200px;
+    height: 5px;
+    text-align: center;
     border-radius: 30px;
     background-color: rgba(0, 0, 0, 0.2);
     position: relative;

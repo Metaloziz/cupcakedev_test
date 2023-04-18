@@ -11,21 +11,15 @@ type RowPropsT = {
 }
 export const Row: FC<RowPropsT> = ({values, title}) => {
 
-  const cells = values.map((value) => {
-
-    if (value === DEFAULT_COURSE) {
-      return <Loader/>
-    } else {
-      return <Cell value={value}
-                   isLowes={value === Math.min(...values)}/>
-    }
-
-  })
-
+  const cells = values.map((value) =>
+    value === DEFAULT_COURSE
+      ? <Loader/>
+      : <Cell value={value} isLowes={value === Math.min(...values)}/>
+  )
 
   return (
     <div className={style.main}>
-      <div>{title}</div>
+      <Cell value={title}/>
       {cells}
     </div>
   );

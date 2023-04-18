@@ -1,1 +1,1 @@
-export const DEFAULT_COURSE = 1
+export const DEFAULT_COURSE = 0
