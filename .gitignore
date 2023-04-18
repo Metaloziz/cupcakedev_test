@@ -1,9 +1,11 @@
 /node_modules
 
+/build
+
+/dist
+
 .idea
 
 .env
 
 yarn-error.log
-
-

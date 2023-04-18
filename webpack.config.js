@@ -1,34 +1,37 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.tsx', // точка входа, о которой говорилось ранее.
-  mode: 'development',
+  entry: "./src/index.tsx",
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "build"),
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "public", "index.html"),
+    }),
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "build"),
+    },
+    port: 3000,
+  },
   module: {
     rules: [
       {
-        test: /\.[jt]sx?$/, // сопоставляет файлы .js, .ts, и .tsx
-        loader: 'babel-loader', // использует для указанных типов файлов загрузчик babel-loader (ts-loader не требуется).
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
+        use: ["babel-loader"],
       },
       {
-        test: /\.css$/, // сопоставляет только файлы .css (т.е. не .scss и др.)
-        use: ['style-loader', 'css-loader'],
-      },
+        test: /\.(ts|tsx)$/,
+        loader: "ts-loader"
+      }
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-  output: {
-    filename: 'bundle.js', // выходной бандл
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'public/'),
-    port: 3000,
-    publicPath: 'http://localhost:3000/dist/',
-    hotOnly: true,
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()], // used for hot reloading when developing
-  devtool: 'eval-source-map', // создает высококачественные карты кода
-}
+    extensions: [".*", ".js", ".jsx", ".ts", ".tsx"],
+  }
+};
