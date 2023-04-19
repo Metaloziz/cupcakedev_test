@@ -10,7 +10,7 @@ export const App: FC = () => {
   const {getCurrentCourse} = useFetchCourse()
 
   const rows = relativeKeysCourses.map((currency) =>
-    <Row title={currency} values={getCurrentCourse(currency)}/>)
+    <Row key={currency} title={currency} values={getCurrentCourse(currency)}/>)
 
   // todo почему-то не все ячейки показывают минимальное значение ?
   return (

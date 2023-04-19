@@ -8,11 +8,12 @@ import style from './styles.module.css'
 
 export const Row: FC<RowPropsT> = ({values, title}) => {
 
-  // todo добавить ключи
-  const cells = values.map((value) =>
+  const cells = values.map((value, index) =>
     value === DEFAULT_COURSE
-      ? <Loader/>
-      : <Cell value={value} isLowes={value === Math.min(...values)}/>
+      ? <Loader key={value + index}/>
+      : <Cell key={value + index}
+              value={value}
+              isLowes={value === Math.min(...values)}/>
   )
 
   return (
