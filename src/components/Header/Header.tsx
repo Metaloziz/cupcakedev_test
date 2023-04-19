@@ -1,7 +1,7 @@
 import React, { FC, memo } from "react";
 import { HeaderPropsT } from "../../types/components/HeaderPropsT";
 import { Cell } from "../Cell/Cell";
-import style from './styles.module.css'
+import style from './Header.module.css'
 
 
 export const Header: FC<HeaderPropsT> = memo(({headers}) => {
