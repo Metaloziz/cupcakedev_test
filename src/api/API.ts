@@ -4,10 +4,10 @@ import { TYPE_REQUEST } from "../constants/type_request";
 import { Path } from "../enums/path";
 import { StatusCode } from "../enums/statusCode";
 import { ResponseCourseT } from "../types/ResponseCourseT";
-import { StateHandleT } from "../types/StateHandleT";
+import { StateHandleT } from "../types/utils/StateHandleT";
 import { convertResponseData } from "../utils/convertResponseData";
 
-export const api = {
+export const API = {
   getData: async function (path: Path, handle: StateHandleT) {
     const response = await fetch(BASE_URL + path + TYPE_REQUEST)
 

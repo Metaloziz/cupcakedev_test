@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { DEFAULT_COURSE } from "../../constants/default_course";
-import { RowPropsT } from "../../types/RowPropsT";
+import { RowPropsT } from "../../types/components/RowPropsT";
 import { Cell } from "../Cell/Cell";
 import { Loader } from "../Loader/Loader";
 

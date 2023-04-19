@@ -1,4 +1,4 @@
-import { AllKeysT } from "./AllKeysT";
+import { AllKeysT } from "../AllKeysT";
 
 export type RowPropsT = {
   title: AllKeysT
