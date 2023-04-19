@@ -1,4 +1,12 @@
 import { Currency } from "../enums/currency";
-import { RUB_USD_KEY, RUB_EUR_KEY, EUR_USD_KEY } from "./relativeKeys";
+import { RelativeKeyCourse } from "../enums/relativeKeyCourse";
+import { AllKeysT } from "../types/AllKeysT";
 
-export const relativeKeysCourses = [Currency.RUB, Currency.EUR, Currency.USD, RUB_USD_KEY, RUB_EUR_KEY, EUR_USD_KEY]
+export const relativeKeysCourses: AllKeysT[] = [
+  Currency.RUB,
+  Currency.EUR,
+  Currency.USD,
+  RelativeKeyCourse.RUB_USD_KEY,
+  RelativeKeyCourse.RUB_EUR_KEY,
+  RelativeKeyCourse.EUR_USD_KEY
+]

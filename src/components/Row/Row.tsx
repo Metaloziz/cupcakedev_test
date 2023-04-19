@@ -1,16 +1,14 @@
 import React, { FC } from "react";
 import { DEFAULT_COURSE } from "../../constants/default_course";
+import { RowPropsT } from "../../types/RowPropsT";
 import { Cell } from "../Cell/Cell";
 import { Loader } from "../Loader/Loader";
 
 import style from './styles.module.css'
 
-export type RowPropsT = {
-  title: string
-  values: number[]
-}
 export const Row: FC<RowPropsT> = ({values, title}) => {
 
+  // todo добавить ключи
   const cells = values.map((value) =>
     value === DEFAULT_COURSE
       ? <Loader/>

@@ -3,11 +3,11 @@ import { api } from "./api/api";
 import style from './App.module.css'
 import { Header } from "./components/Header/Header";
 import { Row } from "./components/Row/Row";
-import { DEFAULT_COURSE } from "./constants/default_course";
 import { initial_courses } from "./constants/initial_courses";
 import { relativeKeysCourses } from "./constants/relativeKeysCourses";
 import { Path } from "./enums/path";
-import { StateCourseT } from "./types/stateCourseT";
+import { AllKeysT } from "./types/AllKeysT";
+import { StateCourseT } from "./types/StateCourseT";
 
 export const App: FC = () => {
 
@@ -21,16 +21,17 @@ export const App: FC = () => {
     api.getData(Path.THIRD, setThirdSourceCourses)
   }, [])
 
-  const getCurrentCourse = (currency: string): number[] => {
+  const getCurrentCourse = (currency: AllKeysT): number[] => {
+
     return [
-      firstSourceCourses[currency] ?? DEFAULT_COURSE,
-      secondSourceCourses[currency] ?? DEFAULT_COURSE,
-      thirdSourceCourses[currency] ?? DEFAULT_COURSE
+      firstSourceCourses[currency],
+      secondSourceCourses[currency],
+      thirdSourceCourses[currency]
     ]
   }
 
-  const rows = relativeKeysCourses.map((key) =>
-    <Row title={key} values={getCurrentCourse(key)}/>)
+  const rows = relativeKeysCourses.map((currency) =>
+    <Row title={currency} values={getCurrentCourse(currency)}/>)
 
   // todo почему-то не все ячейки показывают минимальное значение ?
   return (
