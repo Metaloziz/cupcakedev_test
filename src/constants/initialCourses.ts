@@ -2,7 +2,7 @@ import { Currency } from '../enums/currency';
 import { RelativeKeyCourse } from '../enums/relativeKeyCourse';
 import { StateCourseT } from '../types/StateCourseT';
 
-import { DEFAULT_COURSE } from './default_course';
+import { DEFAULT_COURSE } from './defaultCourse';
 
 export const initialCourses: StateCourseT = {
   [Currency.RUB]: DEFAULT_COURSE,

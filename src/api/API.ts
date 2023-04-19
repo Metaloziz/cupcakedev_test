@@ -1,6 +1,6 @@
-import { BASE_URL } from '../constants/base_url';
-import { RECONNECT_TIME } from '../constants/reconnect_time';
-import { TYPE_REQUEST } from '../constants/type_request';
+import { BASE_URL } from '../constants/baseUrl';
+import { RECONNECT_TIME } from '../constants/reconnectTime';
+import { TYPE_REQUEST } from '../constants/typeRequest';
 import { Path } from '../enums/path';
 import { StatusCode } from '../enums/statusCode';
 import { ResponseCourseT } from '../types/ResponseCourseT';

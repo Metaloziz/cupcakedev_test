@@ -1,4 +1,4 @@
-import { BASE_CURRENCY } from '../constants/base_currency';
+import { BASE_CURRENCY } from '../constants/baseCurrency';
 import { AllKeysT } from '../types/AllKeysT';
 
 export const addBaseCurrencyToTitle = (title: AllKeysT): string | AllKeysT => {

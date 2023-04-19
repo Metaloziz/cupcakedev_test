@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { DEFAULT_COURSE } from '../../constants/default_course';
+import { DEFAULT_COURSE } from '../../constants/defaultCourse';
 import { RowPropsT } from '../../types/components/RowPropsT';
 import { addBaseCurrencyToTitle } from '../../utils/addBaseCurrencyToTitle';
 import { checkIsLowestValue } from '../../utils/checkIsLowestValue';
