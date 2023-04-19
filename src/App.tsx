@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import style from './App.module.css'
 import { Header } from "./components/Header/Header";
 import { Row } from "./components/Row/Row";
+import { headersTable } from "./constants/headersTable";
 import { relativeKeysCourses } from "./constants/relativeKeysCourses";
 import { useFetchCourse } from "./hooks/useFetchCourse";
 
@@ -15,7 +16,7 @@ export const App: FC = () => {
   // todo почему-то не все ячейки показывают минимальное значение ?
   return (
     <div className={style.main}>
-      <Header/>
+      <Header headers={headersTable}/>
       {rows}
     </div>);
 };

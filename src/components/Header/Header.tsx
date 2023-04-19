@@ -1,12 +1,16 @@
-import React, { FC } from "react";
-import { headersTable } from "../../constants/headersTable";
+import React, { FC, memo } from "react";
+import { HeaderPropsT } from "../../types/components/HeaderPropsT";
 import { Cell } from "../Cell/Cell";
 import style from './styles.module.css'
 
-export const Header: FC = () => {
 
-  return (
-    <div className={style.main}>{headersTable.map((element) =>
-      <Cell key={element} value={element}/>)}</div>
-  );
-};
+export const Header: FC<HeaderPropsT> = memo(({headers}) => {
+
+    const cells = headers.map((element) =>
+      <Cell key={element} value={element}/>)
+
+    return (
+      <div className={style.main}>{cells}</div>
+    );
+  }
+)
