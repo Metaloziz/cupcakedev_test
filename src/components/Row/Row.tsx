@@ -6,7 +6,7 @@ import { getIndex } from '../../utils/getIndex';
 import { Cell } from '../Cell/Cell';
 import { Loader } from '../Loader/Loader';
 
-import style from './styles.module.css';
+import style from './Row.module.css';
 
 export const Row: FC<RowPropsT> = ({ values, title }) => {
   const cells = values.map((value, index) =>
