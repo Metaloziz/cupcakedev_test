@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { DEFAULT_COURSE } from "../../constants/default_course";
 import { RowPropsT } from "../../types/components/RowPropsT";
+import { checkIsLowestValue } from "../../utils/checkIsLowestValue";
 import { Cell } from "../Cell/Cell";
 import { Loader } from "../Loader/Loader";
 
@@ -13,7 +14,7 @@ export const Row: FC<RowPropsT> = ({values, title}) => {
       ? <Loader key={value + index}/>
       : <Cell key={value + index}
               value={value}
-              isLowes={value === Math.min(...values)}/>
+              isLowes={checkIsLowestValue(value, values)}/>
   )
 
   return (
