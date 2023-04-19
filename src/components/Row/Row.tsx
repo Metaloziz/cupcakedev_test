@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 
 import { DEFAULT_COURSE } from '../../constants/default_course';
 import { RowPropsT } from '../../types/components/RowPropsT';
+import { addBaseCurrencyToTitle } from '../../utils/addBaseCurrencyToTitle';
+import { checkIsLowestValue } from '../../utils/checkIsLowestValue';
 import { getIndex } from '../../utils/getIndex';
 import { Cell } from '../Cell/Cell';
 import { Loader } from '../Loader/Loader';
@@ -16,14 +18,14 @@ export const Row: FC<RowPropsT> = ({ values, title }) => {
       <Cell
         key={getIndex(value, index)}
         value={value}
-        isLowes={value === Math.min(...values)}
+        isLowes={checkIsLowestValue(value, values)}
       />
     ),
   );
 
   return (
     <div className={style.main}>
-      <Cell value={title} />
+      <Cell value={addBaseCurrencyToTitle(title)} />
       {cells}
     </div>
   );

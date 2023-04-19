@@ -1,1 +1,1 @@
-export const BASE_CURRENCY = 'CUPCAKE'
+export const BASE_CURRENCY = 'CUPCAKE';
