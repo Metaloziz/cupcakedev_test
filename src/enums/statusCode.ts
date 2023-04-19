@@ -1,5 +1,4 @@
 export enum StatusCode {
   SERVER_ERROR = 502,
-  SUCCESS = 200
+  SUCCESS = 200,
 }
-

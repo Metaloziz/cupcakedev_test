@@ -1,6 +1,6 @@
-import { DefaultDivPropsT } from "../DefaultDivPropsT";
+import { DefaultDivPropsT } from '../DefaultDivPropsT';
 
 export type CellPropsT = {
-  value: string | number
-  isLowes?: boolean
-} & DefaultDivPropsT
+  value: string | number;
+  isLowes?: boolean;
+} & DefaultDivPropsT;

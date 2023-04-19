@@ -1,9 +1,8 @@
-import { RatesT } from "./RatesT";
+import { RatesT } from './RatesT';
 
 export type ResponseCourseT = {
-  rates: RatesT,
-  timestamp: number,
-  base: string,
-  date: string
-}
-
+  rates: RatesT;
+  timestamp: number;
+  base: string;
+  date: string;
+};

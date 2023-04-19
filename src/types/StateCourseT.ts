@@ -1,4 +1,4 @@
-import { RatesT} from "./RatesT";
-import { RelativeCourseT } from "./RelativeCourseT";
+import { RatesT } from './RatesT';
+import { RelativeCourseT } from './RelativeCourseT';
 
-export type StateCourseT = RatesT & RelativeCourseT
+export type StateCourseT = RatesT & RelativeCourseT;

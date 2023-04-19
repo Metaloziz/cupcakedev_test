@@ -1,5 +1,5 @@
-import { headersTable } from "../../constants/headersTable";
+import { headersTable } from '../../constants/headersTable';
 
 export type HeaderPropsT = {
-  headers: typeof headersTable
-}
+  headers: typeof headersTable;
+};

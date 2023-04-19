@@ -1,1 +1,1 @@
-export const TYPE_REQUEST = '/poll'
+export const TYPE_REQUEST = '/poll';

@@ -1,1 +1,1 @@
-export const RECONNECT_TIME = 1000
+export const RECONNECT_TIME = 1000;

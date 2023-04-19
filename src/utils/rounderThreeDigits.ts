@@ -1,6 +1,5 @@
 export const rounderThreeDigits = (value: number): number => {
+  const thousandths = 1000;
 
-  const thousandths = 1000
-
-  return Math.round(value * thousandths) / thousandths
-}
+  return Math.round(value * thousandths) / thousandths;
+};

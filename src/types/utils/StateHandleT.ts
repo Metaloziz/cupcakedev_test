@@ -1,3 +1,5 @@
-import { StateCourseT } from "../StateCourseT";
+import { StateCourseT } from '../StateCourseT';
 
-export type StateHandleT = (value: (((prevState: StateCourseT) => StateCourseT) | StateCourseT)) => void
+export type StateHandleT = (
+  value: ((prevState: StateCourseT) => StateCourseT) | StateCourseT,
+) => void;

@@ -1,24 +1,20 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ESLintPlugin = require('eslint-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: './src/index.tsx',
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "build"),
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'build'),
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "public", "index.html"),
+      template: path.join(__dirname, 'public', 'index.html'),
     }),
-    new ESLintPlugin({
-      extensions: ['ts', 'tsx']
-    })
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, "build"),
+      directory: path.join(__dirname, 'build'),
     },
     port: 3001,
   },
@@ -27,25 +23,25 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: ['babel-loader'],
       },
       {
         test: /\.(ts|tsx)$/,
-        loader: "ts-loader"
+        loader: 'ts-loader',
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", {
-          loader: "css-loader",
+        use: ['style-loader', {
+          loader: 'css-loader',
           options: {
             importLoaders: 1,
-            modules: true
-          }
+            modules: true,
+          },
         }],
       },
     ],
   },
   resolve: {
-    extensions: [".*", ".js", ".jsx", ".ts", ".tsx"],
-  }
-};
+    extensions: ['.*', '.js', '.jsx', '.ts', '.tsx'],
+  },
+}

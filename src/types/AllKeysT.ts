@@ -1,4 +1,4 @@
-import { Currency } from "../enums/currency";
-import { RelativeKeyCourse } from "../enums/relativeKeyCourse";
+import { Currency } from '../enums/currency';
+import { RelativeKeyCourse } from '../enums/relativeKeyCourse';
 
-export type AllKeysT = Currency | RelativeKeyCourse
+export type AllKeysT = Currency | RelativeKeyCourse;

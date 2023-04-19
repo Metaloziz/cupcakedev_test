@@ -1,9 +1,5 @@
-import { FC, memo } from 'react';
-import style from './Loader.module.css'
-import React from "react";
+import React, { FC } from 'react';
 
-export const Loader: FC = memo(() => {
-    return (
-    <div className={style.loader}/>
-  );
-});
+import style from './styles.module.css';
+
+export const Loader: FC = () => <div className={style.loader} />;

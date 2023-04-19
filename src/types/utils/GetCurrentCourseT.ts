@@ -1,3 +1,3 @@
-import { AllKeysT } from "../AllKeysT";
+import { AllKeysT } from '../AllKeysT';
 
-export type GetCurrentCourseT = (currency: AllKeysT) => number[]
+export type GetCurrentCourseT = (currency: AllKeysT) => number[];

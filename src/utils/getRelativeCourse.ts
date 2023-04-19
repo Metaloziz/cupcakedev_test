@@ -1,3 +1,2 @@
-export const getRelativeCourse = (course1: number, course2: number) => {
-  return course1 / course2
-}
+export const getRelativeCourse = (course1: number, course2: number): number =>
+  course1 / course2;
