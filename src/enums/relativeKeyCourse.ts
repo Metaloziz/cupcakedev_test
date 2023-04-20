@@ -1,4 +1,4 @@
-import { Currency } from './currency';
+import { Currency } from 'enums/currency';
 
 export enum RelativeKeyCourse {
   RUB_USD_KEY = `${Currency.RUB}/${Currency.USD}`,

@@ -1,11 +1,11 @@
-import { BASE_URL } from '../constants/baseUrl';
-import { RECONNECT_TIME } from '../constants/reconnectTime';
-import { TYPE_REQUEST } from '../constants/typeRequest';
-import { Path } from '../enums/path';
-import { StatusCode } from '../enums/statusCode';
-import { ResponseCourseT } from '../types/ResponseCourseT';
-import { StateHandleT } from '../types/utils/StateHandleT';
-import { convertResponseData } from '../utils/convertResponseData';
+import { BASE_URL } from 'constants/baseUrl';
+import { RECONNECT_TIME } from 'constants/reconnectTime';
+import { TYPE_REQUEST } from 'constants/typeRequest';
+import { Path } from 'enums/path';
+import { StatusCode } from 'enums/statusCode';
+import { ResponseCourseT } from 'types/ResponseCourseT';
+import { StateHandleT } from 'types/utils/StateHandleT';
+import { convertResponseData } from 'utils/convertResponseData';
 
 export const API = {
   async getData(path: Path, handle: StateHandleT) {

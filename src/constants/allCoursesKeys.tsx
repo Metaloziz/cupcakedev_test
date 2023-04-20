@@ -1,6 +1,6 @@
-import { Currency } from '../enums/currency';
-import { RelativeKeyCourse } from '../enums/relativeKeyCourse';
-import { AllKeysT } from '../types/AllKeysT';
+import { Currency } from 'enums/currency';
+import { RelativeKeyCourse } from 'enums/relativeKeyCourse';
+import { AllKeysT } from 'types/AllKeysT';
 
 export const relativeKeysCourses: AllKeysT[] = [
   Currency.RUB,

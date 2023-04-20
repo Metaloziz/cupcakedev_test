@@ -1,9 +1,9 @@
-import { Currency } from '../enums/currency';
-import { RelativeKeyCourse } from '../enums/relativeKeyCourse';
-import { RatesT } from '../types/RatesT';
-import { StateCourseT } from '../types/StateCourseT';
-
 import { getRelativeCourse } from './getRelativeCourse';
+
+import { Currency } from 'enums/currency';
+import { RelativeKeyCourse } from 'enums/relativeKeyCourse';
+import { RatesT } from 'types/RatesT';
+import { StateCourseT } from 'types/StateCourseT';
 
 export const convertResponseData = (rates: RatesT): StateCourseT => ({
   ...rates,

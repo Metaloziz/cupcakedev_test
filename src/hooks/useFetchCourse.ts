@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-import { API } from '../api/API';
-import { initialCourses } from '../constants/initialCourses';
-import { Path } from '../enums/path';
-import { StateCourseT } from '../types/StateCourseT';
-import { GetCurrentCourseT } from '../types/utils/GetCurrentCourseT';
+import { API } from 'api/API';
+import { initialCourses } from 'constants/initialCourses';
+import { Path } from 'enums/path';
+import { StateCourseT } from 'types/StateCourseT';
+import { GetCurrentCourseT } from 'types/utils/GetCurrentCourseT';
 
 export const useFetchCourse = (): { getCurrentCourse: GetCurrentCourseT } => {
   const [firstSourceCourses, setFirstSourceCourses] =

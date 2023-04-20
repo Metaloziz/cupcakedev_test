@@ -1,4 +1,4 @@
-import { RatesT } from './RatesT';
+import { RatesT } from 'types/RatesT';
 
 export type ResponseCourseT = {
   rates: RatesT;

@@ -1,5 +1,5 @@
-import { AllKeysT } from '../AllKeysT';
-import { DefaultDivPropsT } from '../DefaultDivPropsT';
+import { AllKeysT } from 'types/AllKeysT';
+import { DefaultDivPropsT } from 'types/DefaultDivPropsT';
 
 export type RowPropsT = {
   title: AllKeysT;

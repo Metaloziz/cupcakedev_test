@@ -1,4 +1,4 @@
-import { DefaultDivPropsT } from '../DefaultDivPropsT';
+import { DefaultDivPropsT } from 'types/DefaultDivPropsT';
 
 export type CellPropsT = {
   value: string | number;
