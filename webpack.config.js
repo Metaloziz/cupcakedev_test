@@ -17,6 +17,7 @@ module.exports = {
       directory: path.join(__dirname, 'build'),
     },
     port: 3001,
+    open: true,
   },
   module: {
     rules: [
