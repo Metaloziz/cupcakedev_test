@@ -8,18 +8,13 @@ import { DEFAULT_COURSE } from 'constants/defaultCourse';
 import { RowPropsT } from 'types/components/RowPropsT';
 import { addBaseCurrencyToTitle } from 'utils/addBaseCurrencyToTitle';
 import { checkIsLowestValue } from 'utils/checkIsLowestValue';
-import { getIndex } from 'utils/getIndex';
 
 export const Row: FC<RowPropsT> = ({ values, title }) => {
-  const cells = values.map((value, index) =>
+  const cells = values.map(({ value, key }) =>
     value === DEFAULT_COURSE ? (
-      <Loader key={getIndex(value, index)} />
+      <Loader key={key} />
     ) : (
-      <Cell
-        key={getIndex(value, index)}
-        value={value}
-        isLowes={checkIsLowestValue(value, values)}
-      />
+      <Cell key={key} value={value} isLowes={checkIsLowestValue(value, values)} />
     ),
   );
 

@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 import { API } from 'api/API';
 import { initialCourses } from 'constants/initialCourses';
 import { Path } from 'enums/path';
 import { StateCourseT } from 'types/StateCourseT';
 import { GetCurrentCourseT } from 'types/utils/GetCurrentCourseT';
+import { getKey } from 'utils/getKey';
 
 export const useFetchCourse = (): { getCurrentCourse: GetCurrentCourseT } => {
   const [firstSourceCourses, setFirstSourceCourses] =
@@ -21,9 +22,18 @@ export const useFetchCourse = (): { getCurrentCourse: GetCurrentCourseT } => {
   }, []);
 
   const getCurrentCourse: GetCurrentCourseT = currency => [
-    firstSourceCourses[currency],
-    secondSourceCourses[currency],
-    thirdSourceCourses[currency],
+    {
+      key: useMemo(() => getKey(currency, Path.FIRST), []),
+      value: firstSourceCourses[currency],
+    },
+    {
+      key: useMemo(() => getKey(currency, Path.SECOND), []),
+      value: secondSourceCourses[currency],
+    },
+    {
+      key: useMemo(() => getKey(currency, Path.THIRD), []),
+      value: thirdSourceCourses[currency],
+    },
   ];
 
   return { getCurrentCourse };
