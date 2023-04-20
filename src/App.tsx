@@ -15,7 +15,6 @@ export const App: FC = () => {
     <Row key={currency} title={currency} values={getCurrentCourse(currency)} />
   ));
 
-  // todo почему-то не все ячейки показывают минимальное значение ?
   return (
     <div className={style.main}>
       <Header headers={headersTable} />
