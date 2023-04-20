@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import { FC, memo } from 'react';
 
 import { CellPropsT } from '../../types/components/CellPropsT';
 import { rounderThreeDigits } from '../../utils/rounderThreeDigits';
