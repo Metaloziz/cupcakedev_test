@@ -1,4 +1,5 @@
 .loader {
+    box-sizing: border-box;
     display: block;
     --height-of-loader: 4px;
     --loader-color: #0071e2;

@@ -4,10 +4,11 @@
     width: 200px;
     height: 100px;
     text-align: start;
-    padding-left: 3%;
+    padding-left: 20px;
     font-size: 20px;
     line-height: 100px;
-    margin: 1px;
+    margin: 2px;
+    box-sizing: border-box;
 }
 
 .lowest {
