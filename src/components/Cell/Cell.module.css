@@ -3,7 +3,8 @@
     border: black 1px solid;
     width: 200px;
     height: 100px;
-    text-align: center;
+    text-align: start;
+    padding-left: 3%;
     font-size: 20px;
     line-height: 100px;
     margin: 1px;
