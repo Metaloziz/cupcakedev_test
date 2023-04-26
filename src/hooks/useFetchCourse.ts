@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 
 import { API } from 'api/API';
+import { longPullRequest } from 'api/longPullRequest';
 import { initialCourses } from 'constants/initialCourses';
 import { Path } from 'enums/path';
 import { StateCourseT } from 'types/StateCourseT';
@@ -16,9 +17,9 @@ export const useFetchCourse = (): { getCurrentCourse: GetCurrentCourseT } => {
     useState<StateCourseT>(initialCourses);
 
   useEffect(() => {
-    API.getData(Path.FIRST, setFirstSourceCourses);
-    API.getData(Path.SECOND, setSecondSourceCourses);
-    API.getData(Path.THIRD, setThirdSourceCourses);
+    longPullRequest(API.getData, Path.FIRST, setFirstSourceCourses);
+    longPullRequest(API.getData, Path.SECOND, setSecondSourceCourses);
+    longPullRequest(API.getData, Path.THIRD, setThirdSourceCourses);
   }, []);
 
   const getCurrentCourse: GetCurrentCourseT = currency => [
